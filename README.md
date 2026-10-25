@@ -8,6 +8,3 @@ Take-home design assessment for the Software Engineer role.
 
 ## Scope
 Design only. The assignment says implementation code is not required; optional pseudo-code is included for stock reservation.
-
-## Before submitting
-Read the design and make sure you can explain its decisions. Update assumptions you disagree with. The AI usage note is included as requested in the brief.
