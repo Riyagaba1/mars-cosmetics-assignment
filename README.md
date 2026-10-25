@@ -1,2 +1,13 @@
-# mars-cosmetics-assignment
-Software Engineer take-home assessment for MARS Cosmetics.
+# MARS Cosmetics — Order & Inventory Sync Service
+
+Take-home design assessment for the Software Engineer role.
+
+## Deliverables
+- [`DESIGN.md`](./DESIGN.md): architecture, data model, concurrency, retries, observability, assumptions and trade-offs.
+- [`architecture.mmd`](./architecture.mmd): Mermaid architecture diagram source.
+
+## Scope
+Design only. The assignment says implementation code is not required; optional pseudo-code is included for stock reservation.
+
+## Before submitting
+Read the design and make sure you can explain its decisions. Update assumptions you disagree with. The AI usage note is included as requested in the brief.

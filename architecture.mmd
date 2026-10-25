@@ -1,0 +1,26 @@
+flowchart LR
+    W[Own website webhook] --> API[NestJS API and adapters]
+    N[Nykaa webhook] --> API
+    B[Blinkit webhook] --> API
+    F[Flipkart poller every 2 min] --> API
+    API --> Q[(AWS SQS order events)]
+    Q --> OW[Order and inventory workers]
+    OW <--> DB[(PostgreSQL: orders, inventory, reservations, audit, outbox)]
+    DB --> OD[Outbox dispatcher]
+    OD --> SQ[(SQS stock sync jobs)]
+    SQ --> SP[Stock publisher workers]
+    SP <--> R[(Redis: rate limits/cache)]
+    SP --> W
+    SP --> N
+    SP --> F
+    SP --> B
+    OD --> EQ[(SQS ERP delivery)]
+    EQ --> EW[ERP worker]
+    EW --> ERP[Microsoft Business Central]
+    OW --> OPS[Ops screen: failed syncs and retry]
+    SP --> OPS
+    EW --> OPS
+    API --> OBS[Metrics, logs and alerts]
+    DB --> OBS
+    SP --> OBS
+    EW --> OBS
